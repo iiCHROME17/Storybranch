@@ -1,0 +1,383 @@
+:root {
+    --primary: #333;
+    --primaryText: #fff;
+    --secondary: #828282;
+    --tertiary: #505050;
+    --workspace: #f0f0f0;
+    --workspaceHover: #c7c7c7;
+    --coreColour: #ff7925;
+    --selectedCoreColour: #ff5107;
+    --branchColour: #256bff;
+    --selectedBranchColour: #0b3cff;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.canvas {
+    display: flex;
+    height: 100vh;
+}
+
+
+.Sidebar {
+    background-color: var(--primary);
+    color: #fff;
+    width: 20%;
+    padding: 10px;
+    z-index: 2;
+}
+
+.TitleSection {
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--secondary);
+}
+
+.TitleSection h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.TitleSection h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.TitleNavSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--tertiary);
+    border-radius: 10px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.TitleNavSection .dropdown {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 10px;
+}
+
+.TitleNavSection .dropdown span {
+    color: #fff;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.TitleNavSection .dropdown select {
+    background-color: var(--tertiary);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.TitleNavSection select optgroup {
+    color: #fff;
+    font-weight: bold;
+}
+
+.TitleNavSection select option {
+    background-color: #fff;
+    color: #000;
+}
+
+.TitleNavSection ul {
+    list-style: none;
+    padding: 0;
+}
+
+.TitleNavSection li {
+    display: inline;
+    margin-right: 15px;
+}
+
+
+.TabSelectSection .Tabs {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.TabSelectSection .Tabs li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.TabSelectSection .Tabs a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.Tabs{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--tertiary);
+    border-radius: 10px;
+}
+.Tabs li button {
+    background-color: var(--tertiary);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+.Tabs li button:hover {
+    background-color: var(--secondary);
+}
+
+.TabNameSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--secondary);
+}
+
+.TabNameSection h2 {
+    margin-right: 10px;
+}
+
+.AddButton,.TextTools button, .TextTools select, .TextEditorHide button {
+    background-color: var(--secondary);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: 0.1s ease;
+
+}
+.TextEditorHide button:hover{
+    background-color: var(--tertiary);
+}
+.IncreaseButton, .DecreaseButton {
+    background-color: var(--secondary);
+    color: var(--tertiary);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+.AddButton:hover  {
+    background-color: var(--tertiary);
+}
+
+.workspace {
+    flex-grow: 1;
+    background-color: var(--workspace);
+    position: relative;
+
+}
+.TimelineTabs {
+    background-color: var(--primary);
+}
+.TimelineTabs button{
+    background-color:var(--workspace);
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px 3px 0 0;
+    transition: 0.1s ease;
+}
+.TimelineTabs button:hover {
+    background-color:var(--workspaceHover);
+}
+
+.TextEditor {
+    background-color: var(--primary);
+    padding: 20px;
+    width: 600px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 2;
+}
+.TextEditor.hidden{
+    display: none;
+}
+.TextEditorTitle, .TextTools{
+    border-bottom: 2px solid var(--secondary);
+}
+
+.TextEditorTitle h1 {
+    margin-bottom: 15px;
+    color: var(--primaryText);
+}
+
+
+.TextTools ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.TextTools ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.TextTools select,
+.TextTools input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.FontSizeControl {
+    display: flex;
+    align-items: center;
+}
+
+.FontSizeControl button {
+    background-color: #eee;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.TextEditorContent {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 200px;
+    margin-top: 10px;
+}
+.TextEditorHide {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.Hotbar {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary);
+    opacity: 0.9;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.Hotbar {
+    background-color: var(--primary);
+    opacity: 0.9;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+    position: absolute;
+}
+
+.HotbarButton {
+    background-color: var(--secondary);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.HotbarButton:hover {
+    background-color: var(--tertiary);
+}
+
+
+/*  -----------------------------------------------Nodes-------------------- */
+.nodeContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.node {
+    width: 50px;
+    height: 50px;
+    background-color: var(--coreColour);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.nodeName {
+    color: #000000;
+    text-align: center;
+    user-select: none;
+    margin-top: 5px;
+}
+
+
+.nodeNameInput {
+    width: 60px;
+    z-index: 2;
+}
+.nodeContainer.selected .node {
+    background-color: var(--selectedCoreColour);
+    transform: scale(1.25);
+}
+
+.line {
+    pointer-events: none; /* Ensure the line does not interfere with node interactions */
+}
+/* --TabContent------------------------------------------------------------- */
+.TabContentSection {
+    padding: 10px;
+}
+
+.ContentButtonContainer {
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: 0.1s ease;
+}
+.ContentButtonContainer:hover {
+    background-color: var(--tertiary);
+}
+
+.ContentButton {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.RemoveContent {
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: bolder;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+/**  --------------------------------Responsive Design---------------------- */
