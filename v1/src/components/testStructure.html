@@ -3,20 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <title>STORYBRANCH</title>
-
-    <div class="canvas">
-        <div class="Sidebar">
-        </div>
-
-        <div class="workspace">
-        </div>
-
-        <div class="TextEditor">
-
-        </div>
-    </div>
+    <link rel="stylesheet" href="styles/storybranch.main.css">
 </head>
 <body>
+<div class="canvas">
+    <div class="Sidebar">
+        <div class="TitleSection">
+            <h1>STORYBRANCH</h1>
+            <h2>Untitled</h2>
+            <nav class="TitleNavSection">
+                <ul>
+                    <li>
+                        <div class="DropdownContainer">
+                            <span class="DropdownLabel">File</span>
+                            <select>
+                                <option>New</option>
+                                <option>Open</option>
+                                <option>Save</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="DropdownContainer">
+                            <span class="DropdownLabel">Edit</span>
+                            <select>
+                                <option>Undo</option>
+                                <option>Redo</option>
+                                <option>Cut</option>
+                                <option>Copy</option>
+                                <option>Paste</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="DropdownContainer">
+                            <span class="DropdownLabel">View</span>
+                            <select>
+                                <option>Zoom In</option>
+                                <option>Zoom Out</option>
+                                <option>Full Screen</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="DropdownContainer">
+                            <span class="DropdownLabel">Help</span>
+                            <select>
+                                <option>Documentation</option>
+                                <option>About</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="TabSelectSection">
+            <ul class="Tabs">
+                <li><button>Character</button></li>
+                <li><button>Story</button></li>
+                <li><button>World</button></li>
+            </ul>
+            <div class="TabNameSection">
+                <h2>Character:</h2>
+                <button class="AddButton">+</button>
+            </div>
+        </div>
+        <div class ="TabContentSection">
+            <div class="ContentButtonContainer">
+                <button class="ContentButton">CONTENT NAME</button>
+                <button class="RemoveContent">-</button>
+            </div><div class="ContentButtonContainer">
+                <button class="ContentButton">CONTENT NAME</button>
+                <button class="RemoveContent">-</button>
+            </div><div class="ContentButtonContainer">
+                <button class="ContentButton">CONTENT NAME</button>
+                <button class="RemoveContent">-</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="workspace">
+    </div>
+
+    <div class = "TextEditorHide">
+        <button class="HideButton">></button>
+    </div>
+
+    <div class="TextEditor">
+        <div class ="TextEditorTitle">
+            <h1 >Tab Name</h1>
+        </div>
+        <div class ="TextTools">
+            <ul>
+                <select id="Style">
+                    <option value="Paragraph">Paragraph</option>
+                    <option value="Heading 1">Heading 1</option>
+                    <option value="Heading 2">Heading 2</option>
+                    <option value="Heading 3">Heading 3</option>
+                </select>
+                <select id="FontFamily">
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Inter">Inter</option>
+                </select>
+                <div class="FontSizeControl">
+                    <button class="DecreaseButton">-</button>
+                    <input type="text" value="12">
+                    <button class="IncreaseButton">+</button>
+                </div>
+                <button class="BoldButton">B</button>
+                <button class="ItalicButton">I</button>
+                <button class="UnderlineButton">U</button>
+                <button class="ColorButton">Color</button>
+                <button class="HighlightButton">Highlight</button>
+                <select id="Insert">
+                    <option value="Insert">Insert</option>
+                    <option value="Image">Image</option>
+                    <option value="Link">Link</option>
+                    <option value="Table">Table</option>
+                </select>
+                <select id="Align">
+                    <option value="Align">Align</option>
+                    <option value="Left">Left</option>
+                    <option value="Center">Center</option>
+                    <option value="Right">Right</option>
+                    <option value="Justify">Justify</option>
+                </select>
+                <select id="LineSpacing">
+                    <option value="Line Spacing">Line Spacing</option>
+                    <option value="1">1</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                </select>
+                <select id="List">
+                    <option value="List">List</option>
+                    <option value="Numbered">Numbered</option>
+                    <option value="Bulleted">Bulleted</option>
+                </select>
+            </ul>
+        </div>
+        <div class="TextEditorContent" contenteditable="true">
+
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>

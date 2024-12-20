@@ -1,0 +1,57 @@
+/* Make the body and html take up the full viewport height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Canvas container: Full height of the page */
+.canvas {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh; /* Ensures the canvas takes the full height of the viewport */
+}
+
+/* Sidebar: Stuck to the left, full height */
+.sidebar {
+    width: 20%; /* Adjust the sidebar width as needed */
+    background-color: darkgray; /* Example color */
+    height: 100%; /* Matches the height of the canvas */
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* Text Editor: Stuck to the right, full height */
+.text-editor {
+    width: 30%; /* Adjust the text editor width as needed */
+    background-color: lightgray; /* Example color */
+    height: 100%; /* Matches the height of the canvas */
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Add transition for animation */
+    transform: translateX(0); /* Default position */
+}
+/* Toggle button: Positioned in the workspace */
+.toggle-button {
+    position: absolute;
+    top: 10px;
+    right: 0; /* Position the button on the right side */
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* Hidden state for the text editor */
+.text-editor.hidden {
+    transform: translateX(100%); /* Move out of view */
+}
+/* Workspace: Takes up remaining space and full height */
+.workspace {
+    flex-grow: 1; /* Expands to fill remaining horizontal space */
+    background-color: lightblue; /* Example color */
+    height: 100%; /* Matches the height of the canvas */
+    z-index: 1;
+}
