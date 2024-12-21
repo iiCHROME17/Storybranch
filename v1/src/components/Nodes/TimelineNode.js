@@ -7,6 +7,7 @@ class TimelineNode {
         this.branches = [];       // Array of child Nodes (branches)
         this.x = x;               // X position of the Node
         this.y = y;               // Y position of the Node
+        this.parentDiv = null;    // Parent div of the Node Container
     }
 
     addBranch(node) {

@@ -210,24 +210,53 @@ body {
     margin-bottom: 15px;
     color: var(--primaryText);
 }
-
+.TextTools {
+    padding-top: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: var(--secondary);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 10px;
+}
 
 .TextTools ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     list-style: none;
     padding: 0;
-    margin-bottom: 15px;
+    margin: 0;
+
 }
 
 .TextTools ul li {
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 0;
 }
 
 .TextTools select,
-.TextTools input {
+.TextTools input,
+.TextTools button {
+    background-color: transparent;
     padding: 5px;
-    border: 1px solid #ccc;
     border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.TextTools button:hover,
+.TextTools select:hover,
+.TextTools input:hover {
+    background-color: var(--tertiary);
+}
+.FontSizeControl input{
+    width: 25px;
+    background: transparent;
+    color: white
 }
 
 .FontSizeControl {
@@ -236,7 +265,6 @@ body {
 }
 
 .FontSizeControl button {
-    background-color: #eee;
     border: none;
     padding: 5px;
     border-radius: 3px;
@@ -257,28 +285,17 @@ body {
     z-index: 10;
 }
 .Hotbar {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--primary);
-    opacity: 0.9;
+    /* position: absolute; */
+    /* bottom: 10px; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    background-color: transparent;
+    /* opacity: 0.9; */
     padding: 10px;
-    border-radius: 5px;
     z-index: 10;
     display: flex;
-    gap: 10px;
-}
-
-.Hotbar {
-    background-color: var(--primary);
-    opacity: 0.9;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 10;
-    display: flex;
-    gap: 10px;
-    position: absolute;
+    /* gap: 10px; */
+    justify-content: center;
 }
 
 .HotbarButton {
@@ -296,18 +313,6 @@ body {
 }
 
 
-
-
-@media (max-width: 1440px) {
-    .TextTools ul {
-        display: none;
-    }
-
-    .TextTools .hamburger {
-        display: block;
-        cursor: pointer;
-    }
-}
 /*  -----------------------------------------------Nodes-------------------- */
 .nodeContainer {
     position: absolute;
@@ -393,30 +398,3 @@ body {
     border-radius: 4px;
 }
 /**  --------------------------------Responsive Design---------------------- */
-@media (max-width: 1000px) {
-    .TabSelectSection .Tabs {
-        display: none;
-    }
-
-    .TabSelectSection .hamburger {
-        display: block;
-        cursor: pointer;
-    }
-}
-
-/* Default state for hamburger menus */
-.hamburger {
-    display: none;
-    font-size: 24px;
-    padding: 10px;
-    background-color: var(--secondary);
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-/* Show the menu when active */
-.hamburger.active + ul {
-    display: block;
-}

@@ -210,24 +210,53 @@ body {
     margin-bottom: 15px;
     color: var(--primaryText);
 }
-
+.TextTools {
+    padding-top: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: var(--secondary);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 10px;
+}
 
 .TextTools ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     list-style: none;
     padding: 0;
-    margin-bottom: 15px;
+    margin: 0;
+
 }
 
 .TextTools ul li {
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 0;
 }
 
 .TextTools select,
-.TextTools input {
+.TextTools input,
+.TextTools button {
+    background-color: transparent;
     padding: 5px;
-    border: 1px solid #ccc;
     border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.TextTools button:hover,
+.TextTools select:hover,
+.TextTools input:hover {
+    background-color: var(--tertiary);
+}
+.FontSizeControl input{
+    width: 25px;
+    background: transparent;
+    color: white
 }
 
 .FontSizeControl {
@@ -236,7 +265,6 @@ body {
 }
 
 .FontSizeControl button {
-    background-color: #eee;
     border: none;
     padding: 5px;
     border-radius: 3px;
@@ -381,3 +409,10 @@ body {
     border-radius: 4px;
 }
 /**  --------------------------------Responsive Design---------------------- */
+@media screen and (max-width: 1280px){
+    .TextEditor {
+        width: 250px;
+    }
+    .
+
+}

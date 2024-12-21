@@ -1,4 +1,4 @@
-import Node from './Node';
+import TimelineNode from "./TimelineNode";
 
 class LinkedTimeline {
     constructor() {
@@ -6,11 +6,11 @@ class LinkedTimeline {
     }
 
     setRoot(data) {
-        this.root = new Node(data); // Initialize the root node
+        this.root = new TimelineNode(data); // Initialize the root node
     }
 
-    addBranch(parentNode, data) {
-        const newNode = new Node(data);
+    addBranch(parentNode, data, parentDiv) {
+        const newNode = new TimelineNode(data, "ARC", 0, 0, parentDiv);
         parentNode.addBranch(newNode); // Add a new branch to the parent node
     }
 
