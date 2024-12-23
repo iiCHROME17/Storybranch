@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Storybranch
+#### By Jerome Bawa.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Storybranch is a React-based application for managing and visualizing story timelines. It provides a user-friendly interface to create, edit, and organize nodes within a timeline, allowing users to manage complex story structures efficiently.
 
-## Available Scripts
+This application streamlines the process of creating and managing story timelines, making it easier for writers, game developers, and other creatives to visualize and organize their stories. With features like text editing, timeline management, and quick access to frequently used actions, Storybranch provides a comprehensive solution for managing story timelines.
 
-In the project directory, you can run:
 
-### `npm start`
+For instance, writers can use Storybranch to create and organize the plot points of their stories while game developers can use it to manage the branching paths and narrative elements of their games. This could be also be used to help map out games with multiple endings or branching paths, especially in narrative-driven games such as Telltale's The Walking Dead or Life is Strange. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Timeline Management**: Create and manage nodes within a timeline.
+- **Text Editor**: Edit text with various formatting options.
+- **Sidebar**: Navigate through different sections of the application.
+- **Hotbar**: Quick access to frequently used actions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Components
 
-### `npm run build`
+### Storybranch
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The main component that manages the application layout and state.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Workspace
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Manages and displays timeline nodes and instances.
 
-### `npm run eject`
+### TextEditor
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Provides a text editing interface with formatting tools.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Sidebar
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Allows navigation through different sections of the application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Hotbar
 
-## Learn More
+Provides quick access to actions like creating new nodes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
 
-### Code Splitting
+- Node.js
+- npm
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Installation
 
-### Analyzing the Bundle Size
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/storybranch.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd storybranch
+    ```
+3. Install dependencies:
+    ```sh
+    npm install
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Running the Application
 
-### Making a Progressive Web App
+Start the development server:
+```sh
+npm start 
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Development Status
+This project is currently a solo project and is in it's very early stages of development. Currently, a proof of concept is being created where an early prototype of the application is being developed. The goal is to create a functional prototype that demonstrates the core features of the application.
 
-### Advanced Configuration
+if you are interested in contributing to this project, please feel free to reach out to me at jeromebb90@gmail.com.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I am more than willing to collaborate with others who are interested in contributing to this project.

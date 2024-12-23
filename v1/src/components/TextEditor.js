@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * TextEditor component for editing text with various formatting options.
+ * @param {Object} props - The component props.
+ * @param {boolean} props.isHidden - Flag to determine if the text editor is hidden.
+ */
 const TextEditor = ({ isHidden }) => (
     <div className={`TextEditor ${isHidden ? 'hidden' : ''}`}>
         <div className="TextEditorTitle">

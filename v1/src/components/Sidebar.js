@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * Sidebar component for managing side tabs and their content.
+ * @param {string} activeSideTab - The currently active side tab.
+ * @param {Function} setActiveSideTab - Function to set the active side tab.
+ */
 const Sidebar = ({ activeSideTab, setActiveSideTab }) => (
     <div className="Sidebar">
         <div className="TitleSection">

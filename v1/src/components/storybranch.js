@@ -6,17 +6,26 @@ import Workspace from './Workspace';
 import Hotbar from './Hotbar';
 import TextEditor from './TextEditor';
 
+/**
+ * Storybranch component for managing the main application layout and state.
+ */
 const Storybranch = () => {
-    const [isTextEditorHidden, setTextEditorHidden] = useState(false);
-    const [activeTab, setActiveTab] = useState('Main');
-    const [activeSideTab, setActiveSideTab] = useState('Character');
-    const [selectedNodeId, setSelectedNodeId] = useState(null);
-    const [timeline, setTimeline] = useState(new LinkedTimeline());
+    const [isTextEditorHidden, setTextEditorHidden] = useState(false); // State to toggle text editor visibility
+    const [activeTab, setActiveTab] = useState('Main'); // State for the active tab in the workspace
+    const [activeSideTab, setActiveSideTab] = useState('Character'); // State for the active side tab in the sidebar
+    const [selectedNodeId, setSelectedNodeId] = useState(null); // State for the selected node ID
+    const [timeline, setTimeline] = useState(new LinkedTimeline()); // State for the timeline object
 
+    /**
+     * Toggle the visibility of the text editor.
+     */
     const toggleTextEditor = () => {
         setTextEditorHidden(!isTextEditorHidden);
     };
 
+    /**
+     * Create a new node in the timeline.
+     */
     const createNode = () => {
         setTimeline((prevTimeline) => {
             const newNodeData = {
@@ -40,6 +49,11 @@ const Storybranch = () => {
         });
     };
 
+    /**
+     * Update the name of a node in the timeline.
+     * @param {number} id - The ID of the node to update.
+     * @param {string} newName - The new name for the node.
+     */
     const updateNodeName = (id, newName) => {
         setTimeline((prevTimeline) => {
             const newTimeline = new LinkedTimeline();
