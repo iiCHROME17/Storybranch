@@ -26,13 +26,13 @@ const Storybranch = () => {
     /**
      * Create a new node in the timeline.
      */
-    const createNode = () => {
+    const createNode = (customName) => {
         setTimeline((prevTimeline) => {
             const newNodeData = {
                 id: prevTimeline.root ? prevTimeline.root.branches.length + 1 : 0,
                 x: prevTimeline.root ? prevTimeline.root.branches.length * 100 + 100 : 100,
-                y: prevTimeline.root ? 200 : 100, // Adjust y position for child nodes
-                name: `Node ${prevTimeline.root ? prevTimeline.root.branches.length + 2 : 1}`
+                y: prevTimeline.root ? 200 : 100,
+                name: customName || `Node ${prevTimeline.root ? prevTimeline.root.branches.length + 2 : 1}`
             };
 
             const newTimeline = new LinkedTimeline();

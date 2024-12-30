@@ -25,6 +25,7 @@ const Workspace = React.memo(({ activeTab, setActiveTab, timeline, updateNodeNam
 
     const handleBlur = useCallback((node) => {
         updateNodeName(node.data.id, newName);
+        node.caption = newName; // Update caption
         setEditingNodeId(null);
     }, [newName, updateNodeName]);
 
@@ -39,8 +40,15 @@ const Workspace = React.memo(({ activeTab, setActiveTab, timeline, updateNodeNam
         console.log(`Selected node ID: ${node.data.id}`);
     }, [setSelectedNodeId]);
 
-    const createNode = useCallback((parentDiv) => {
-        const newNode = new TimelineNode({ id: nodes.length + 1, name: `Node ${nodes.length + 1}` }, `Node ${nodes.length + 1}`, 100 * (nodes.length + 1), 100, parentDiv);
+    const createNode = useCallback((parentDiv, customName) => {
+        const newNode = new TimelineNode(
+            { id: nodes.length + 1, name: customName || `Node ${nodes.length + 1}` },
+            customName || `Node ${nodes.length + 1}`,
+            100 * (nodes.length + 1),
+            100,
+            parentDiv
+        );
+        newNode.caption = customName || `Node ${nodes.length + 1}`; // Set caption
         setNodes((prevNodes) => [...prevNodes, newNode]);
         dispatch({ type: 'ADD_NODE', payload: { activeTab, newNode } });
     }, [nodes.length, activeTab]);
@@ -73,13 +81,12 @@ const Workspace = React.memo(({ activeTab, setActiveTab, timeline, updateNodeNam
                         className="nodeName"
                         onDoubleClick={() => handleDoubleClick(node)}
                     >
-                    {node.data.name}
-                </span>
+                {node.caption} {/* Display caption */}
+            </span>
                 )}
             </div>
         ));
     }, [selectedNodeId, handleClick, handleDoubleClick, handleBlur, handleKeyDown, newName, editingNodeId]);
-
     return (
         <div className="workspace">
             <div className="TimelineTabs">

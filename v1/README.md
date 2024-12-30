@@ -45,7 +45,7 @@ Provides quick access to actions like creating new nodes.
 - Node.js
 - npm
 
-### Installation
+### InstallatiNOon
 
 1. Clone the repository:
     ```sh

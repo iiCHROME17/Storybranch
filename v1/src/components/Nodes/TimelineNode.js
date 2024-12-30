@@ -1,7 +1,5 @@
 /**
  * Class representing a node in the timeline.
- * These are the main nodes that represent a point in the timeline.
- * They can have branches that represent sub-timelines.
  */
 class TimelineNode {
     /**
@@ -12,38 +10,39 @@ class TimelineNode {
      * @param {number} [y=0] - The y-coordinate of the node.
      */
     constructor(data, name = "ARC", x = 0, y = 0) {
-        this.name = name;         // Name of the Node
-        this.data = data;         // Instance of Data class
-        this.prev = null;         // Previous Node in the timeline
-        this.next = null;         // Next Node in the timeline
-        this.branches = [];       // Array of child Nodes (branches)
-        this.x = x;               // X position of the Node
-        this.y = y;               // Y position of the Node
-        this.parentDiv = null;    // Parent div of the Node Container
+        this.name = name;
+        this.caption = name; // Add caption field
+        this.data = data;
+        this.prev = null;
+        this.next = null;
+        this.branches = [];
+        this.x = x;
+        this.y = y;
+        this.parentDiv = null;
     }
 
     /**
-     * Add a branch node to this node.
-     * @param {TimelineNode} node - The branch node to add.
+     * Add a branch to the node.
+     * @param {TimelineNode} node - The node to add as a branch.
      */
     addBranch(node) {
-        this.branches.push(node); // Add a new branch to this node
+        this.branches.push(node);
     }
 
     /**
-     * Set the previous node in the timeline.
-     * @param {TimelineNode} node - The previous node.
+     * Set the previous node.
+     * @param {TimelineNode} node - The node to set as previous.
      */
     setPrev(node) {
-        this.prev = node; // Set the previous node
+        this.prev = node;
     }
 
     /**
-     * Set the next node in the timeline.
-     * @param {TimelineNode} node - The next node.
+     * Set the next node.
+     * @param {TimelineNode} node - The node to set as next.
      */
     setNext(node) {
-        this.next = node; // Set the next node
+        this.next = node;
     }
 }
 
