@@ -19,6 +19,11 @@ body {
     font-family: sans-serif;
 }
 
+.branchNodeColor {
+    background-color: #ffcc00; /* Example color for branch nodes */
+}
+
+
 /* Canvas container styles */
 .canvas {
     display: flex;
@@ -217,6 +222,7 @@ body {
     color: #000000;
     font-weight: bold;
 }
+/* Workspace styles */
 
 /* Text editor styles */
 .TextEditor {
@@ -369,14 +375,17 @@ body {
     z-index: 2;
 }
 
-.nodeContainer.selected .node {
+.nodeContainer.selected > .node {
     background-color: var(--selectedCoreColour);
     transform: scale(1.25);
 }
 
 /* Line styles */
-.line {
-    pointer-events: none; /* Ensure the line does not interfere with node interactions */
+.lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure the lines do not interfere with node interactions */
 }
 
 /* Tab content section styles */

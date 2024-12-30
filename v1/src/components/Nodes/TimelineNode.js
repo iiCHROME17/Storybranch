@@ -8,10 +8,12 @@ class TimelineNode {
      * @param {string} [name="ARC"] - The name of the node.
      * @param {number} [x=0] - The x-coordinate of the node.
      * @param {number} [y=0] - The y-coordinate of the node.
+     * @param {boolean} [isBranch=false] - Whether the node is a branch.
+     * @param {TimelineNode} [parent=null] - The parent node.
      */
-    constructor(data, name = "ARC", x = 0, y = 0) {
+    constructor(data, name = "ARC", x = 0, y = 0, isBranch = false, parent = null) {
         this.name = name;
-        this.caption = name; // Add caption field
+        this.caption = name;
         this.data = data;
         this.prev = null;
         this.next = null;
@@ -19,6 +21,8 @@ class TimelineNode {
         this.x = x;
         this.y = y;
         this.parentDiv = null;
+        this.isBranch = isBranch;
+        this.parent = parent; // Add parent property
     }
 
     /**

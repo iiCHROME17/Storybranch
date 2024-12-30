@@ -35,20 +35,24 @@ const Workspace = React.memo(({ activeTab, setActiveTab, timeline, updateNodeNam
         }
     }, [handleBlur]);
 
-    const handleClick = useCallback((node) => {
+    const handleClick = useCallback((node, event) => {
+        event.stopPropagation(); // Stop event propagation
         setSelectedNodeId(node.data.id);
         console.log(`Selected node ID: ${node.data.id}`);
     }, [setSelectedNodeId]);
 
-    const createNode = useCallback((parentDiv, customName) => {
+    const createNode = useCallback((parentDiv, customName, isBranch = false, parentNode = null) => {
+        const branchOffset = 100; // Vertical offset for stacking branch nodes
+        const branchCount = parentNode ? parentNode.branches.length : 0;
         const newNode = new TimelineNode(
             { id: nodes.length + 1, name: customName || `Node ${nodes.length + 1}` },
             customName || `Node ${nodes.length + 1}`,
-            100 * (nodes.length + 1),
-            100,
-            parentDiv
+            parentNode ? parentNode.x + 100 : 100 * (nodes.length + 1),
+            parentNode ? parentNode.y + 100 + (isBranch ? branchCount * branchOffset : 0) : 100,
+            isBranch,
+            parentNode
         );
-        newNode.caption = customName || `Node ${nodes.length + 1}`; // Set caption
+        newNode.caption = customName || `Node ${nodes.length + 1}`;
         setNodes((prevNodes) => [...prevNodes, newNode]);
         dispatch({ type: 'ADD_NODE', payload: { activeTab, newNode } });
     }, [nodes.length, activeTab]);
@@ -58,14 +62,14 @@ const Workspace = React.memo(({ activeTab, setActiveTab, timeline, updateNodeNam
     }, []);
 
     const renderNodes = useCallback((nodes) => {
-        return nodes.map((node) => (
+        const renderNode = (node) => (
             <div
                 key={node.data.id}
-                className={`nodeContainer ${selectedNodeId === node.data.id ? 'selected' : ''}`}
+                className={`nodeContainer ${selectedNodeId === node.data.id ? 'selected' : ''} ${node.isBranch ? 'branchNode' : ''}`}
                 style={{ left: node.x, top: node.y }}
-                onClick={() => handleClick(node)}
+                onClick={(event) => handleClick(node, event)} // Pass event to handleClick
             >
-                <div className="node"></div>
+                <div className={`node ${node.isBranch ? 'branchNodeColor' : ''}`}></div>
                 {editingNodeId === node.data.id ? (
                     <input
                         type="text"
@@ -81,12 +85,16 @@ const Workspace = React.memo(({ activeTab, setActiveTab, timeline, updateNodeNam
                         className="nodeName"
                         onDoubleClick={() => handleDoubleClick(node)}
                     >
-                {node.caption} {/* Display caption */}
+                {node.caption}
             </span>
                 )}
+                {node.branches.map(renderNode)}
             </div>
-        ));
+        );
+
+        return nodes.filter(node => !node.parent).map(renderNode);
     }, [selectedNodeId, handleClick, handleDoubleClick, handleBlur, handleKeyDown, newName, editingNodeId]);
+
     return (
         <div className="workspace">
             <div className="TimelineTabs">
